@@ -10688,7 +10688,7 @@ h5,
 }
 
 .ftco-section {
-    padding: 7em 0;
+    padding: 4em 0;
 }
 
 .ftco-no-pt {
@@ -10861,7 +10861,7 @@ h5,
     outline: none;
 }
 .btn.btn-primary {
-    background: #28a745 !important;
+    background: #8d448b !important;
     border: 1px solid #8d448b !important;
     color: #fff !important;
 }
@@ -10886,8 +10886,8 @@ h5,
 }
 .form-group .submit {
     position: absolute;
-    top: 20px;
-    left: 84px;
+    top: 16px;
+    left: 82px;
     right: 0;
     margin: 0 auto;
 }
@@ -10895,4 +10895,10 @@ h5,
     .form-group .submit {
         top: 0;
     }
+}
+
+.custom-validation {
+    color: green;
+    padding-top: 3px;
+    font-size: 13px;
 }

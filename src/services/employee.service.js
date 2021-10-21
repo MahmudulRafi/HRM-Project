@@ -1,4 +1,4 @@
-import http from "./http.service";
+import http from "./Http.service";
 const apiUrl = "http://localhost:5000/Employees";
 
 export function getEmployees() {

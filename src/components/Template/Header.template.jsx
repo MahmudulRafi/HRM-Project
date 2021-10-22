@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { getCurrentUser } from "../../services/User.service";
 
 function Header() {
@@ -20,40 +21,27 @@ function Header() {
                         <a href="index3.html" className="nav-link">
                             Home
                         </a>
-                    </li>
-                    <li className="nav-item d-none d-sm-inline-block">
+                        </li>
+                        <li className="nav-item d-none d-sm-inline-block">
                         <a href="#" className="nav-link">
-                            Contact
+                        Contact
                         </a>
                     </li> */}
                 </ul>
                 {/* Right navbar links */}
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <a
+                        <Link
+                            to="/logout"
                             className="nav-link"
                             data-widget="control-sidebar"
                             data-controlsidebar-slide="true"
                             href="#"
                             role="button"
                         >
-                            <div className="info">
-                                <a className="d-block">Logout</a>
-                            </div>
-                        </a>
+                            Logout <i class="fas fa-sign-out-alt"></i>
+                        </Link>
                     </li>
-
-                    {/* <li className="nav-item">
-                        <a
-                            className="nav-link"
-                            data-widget="control-sidebar"
-                            data-controlsidebar-slide="true"
-                            href="#"
-                            role="button"
-                        >
-                            <i className="fas fa-th-large" />
-                        </a>
-                    </li> */}
                     <li className="nav-item">
                         <a
                             className="nav-link"
@@ -61,6 +49,7 @@ function Header() {
                             href="#"
                             role="button"
                         >
+                            Full Screen &nbsp;
                             <i className="fas fa-expand-arrows-alt" />
                         </a>
                     </li>

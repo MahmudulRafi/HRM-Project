@@ -13,8 +13,6 @@ function LoginForm() {
             validationSchema={loginFormValidation}
             onSubmit={(values, actions) => {
                 login(values);
-                window.location = "/";
-                console.log(this.props);
                 actions.setSubmitting(false);
             }}
         >

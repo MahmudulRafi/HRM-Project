@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { getCurrentUser } from "../../services/User.service";
+const role = getCurrentUser().user_type_id;
 
 function Menu() {
     return (
@@ -22,14 +23,14 @@ function Menu() {
                     <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div className="image">
                             <img
-                                src="dist/img/user2-160x160.jpg"
+                                src="dist/img/user4.jpg"
                                 className="img-circle elevation-2"
                                 alt="User Image"
                             />
                         </div>
                         <div className="info">
                             <a href="#" className="d-block">
-                                {getCurrentUser().username}
+                                &nbsp;&nbsp; {getCurrentUser().username}
                             </a>
                         </div>
                     </div>
@@ -45,52 +46,93 @@ function Menu() {
                         >
                             {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">
-                                    <i className="nav-icon fas fa-tachometer-alt" />
-                                    <p>Dashboard</p>
-                                </a>
-                                <ul className="nav nav-treeview"></ul>
-                            </li>
-                            <li className="nav-item">
-                                <a
-                                    href="pages/widgets.html"
-                                    className="nav-link"
-                                >
-                                    <i className="nav-icon fas fa-th" />
-                                    <p>Widgets</p>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">
-                                    <i className="nav-icon fas fa-copy" />
-                                    <p>Layout Options</p>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">
-                                    <i className="nav-icon fas fa-chart-pie" />
-                                    <p>Charts</p>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">
-                                    <i className="nav-icon fas fa-tree" />
-                                    <p>UI Elements</p>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">
-                                    <i className="nav-icon fas fa-edit" />
-                                    <p>Forms</p>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">
-                                    <i className="nav-icon fas fa-table" />
-                                    <p>Tables</p>
-                                </a>
-                            </li>
+
+                            {role === 3 && (
+                                <>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-columns" />
+                                            <p>Dashboard</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-plus-square" />
+                                            <p>Add Company</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a
+                                            href="pages/widgets.html"
+                                            className="nav-link"
+                                        >
+                                            <i className="nav-icon fas fa-copy" />
+                                            <p>View Companies</p>
+                                        </a>
+                                    </li>
+                                </>
+                            )}
+                            {role === 2 && (
+                                <>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-columns" />
+                                            <p>Dashboard</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-user-plus" />
+                                            <p>Add Employee</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a
+                                            href="pages/widgets.html"
+                                            className="nav-link"
+                                        >
+                                            <i className="nav-icon fas fa-copy" />
+                                            <p>View Employees</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-copy" />
+                                            <p>Branches</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-chart-pie" />
+                                            <p>Departments</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-tree" />
+                                            <p>Positions</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-edit" />
+                                            <p>Transection Types</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-table" />
+                                            <p>Attendances</p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a href="#" className="nav-link">
+                                            <i className="nav-icon fas fa-table" />
+                                            <p>Transections</p>
+                                        </a>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </nav>
                     {/* /.sidebar-menu */}

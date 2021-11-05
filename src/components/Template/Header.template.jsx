@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import { getCurrentUser } from "../../services/User.service";
+import { ToastContainer } from "react-toastify";
 
 function Header() {
     return (
         <div>
             <nav className="main-header navbar navbar-expand navbar-dark navbar-dark">
-                {/* Left navbar links */}
+                <ToastContainer
+                    progressClassName="toastProgress"
+                    bodyClassName="toastBody"
+                />
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <a

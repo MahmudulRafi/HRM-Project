@@ -1,11 +1,17 @@
 import React from "react";
-import LoginForm from "../form/Login.form";
+import { Redirect } from "react-router";
+import { ToastContainer } from "react-toastify";
+import LoginForm from "../forms/Login.form";
 
 function Login() {
     return (
         <div>
             <section className="ftco-section">
                 <div className="container">
+                    <ToastContainer
+                        progressClassName="toastProgress"
+                        bodyClassName="toastBody"
+                    />
                     <div className="row justify-content-center">
                         <div className="col-md-6 col-lg-5">
                             <div className="login-wrap p-4 p-md-5">

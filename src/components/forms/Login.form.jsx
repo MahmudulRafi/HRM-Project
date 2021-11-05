@@ -1,9 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginFormValidation } from "./Validation.schema";
 import { login } from "../../services/User.service";
 
 function LoginForm() {
+    const history = useHistory();
+     
     return (
         <Formik
             initialValues={{
@@ -11,8 +14,9 @@ function LoginForm() {
                 password: "",
             }}
             validationSchema={loginFormValidation}
-            onSubmit={(values, actions) => {
+            onSubmit={async (values, actions) => {
                 login(values);
+
                 actions.setSubmitting(false);
             }}
         >
@@ -24,32 +28,44 @@ function LoginForm() {
                                 &nbsp;Username
                             </label>
                             <Field
-                                className="form-control"
-                                label="Username"
+                                className={
+                                    formikProps.errors.username &&
+                                    formikProps.touched.username
+                                        ? "form-control is-invalid"
+                                        : "form-control"
+                                }
                                 type="text"
                                 id="username"
                                 name="username"
                                 placeholder=""
                             />
-                            <div className="custom-validation">
-                                <ErrorMessage name="username" />
-                            </div>
+                            {formikProps.errors.username && (
+                                <div className="invalid-feedback">
+                                    <ErrorMessage name="username" />
+                                </div>
+                            )}
                         </div>
                         <div class="form-group">
                             <label style={{ color: "#8d448b" }}>
                                 &nbsp;Password
                             </label>
                             <Field
-                                className="form-control"
-                                label="Password"
+                                className={
+                                    formikProps.errors.password &&
+                                    formikProps.touched.password
+                                        ? "form-control is-invalid"
+                                        : "form-control"
+                                }
                                 type="password"
                                 id="password"
                                 name="password"
                                 placeholder=""
                             />
-                            <div className="custom-validation">
-                                <ErrorMessage name="password" />
-                            </div>
+                            {formikProps.errors.password && (
+                                <div className="invalid-feedback">
+                                    <ErrorMessage name="password" />
+                                </div>
+                            )}
                         </div>
                         <div className="form-group d-md-flex">
                             <label className="checkbox-wrap checkbox-primary">

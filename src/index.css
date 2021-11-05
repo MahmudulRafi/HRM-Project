@@ -10898,7 +10898,28 @@ h5,
 }
 
 .custom-validation {
-    color: green;
+    color: red;
     padding-top: 3px;
-    font-size: 13px;
+    font-size: 14px;
+}
+
+.Toastify__toast--success {
+    background: #07bc0c !important;
+}
+.Toastify__toast--warning {
+    background: #f1c40f !important;
+}
+.Toastify__toast--info {
+    background: #3498db !important;
+}
+.Toastify__toast--error {
+    background: #e74c3c !important;
+}
+.toastBody {
+    font-family: "Atlas Grotesk Web, Arial", Helvetica, sans - serif;
+    color: #ffffff;
+    font-size: 0.875 rem !important;
+}
+.toastProgress {
+    background: #ffffff !important;
 }

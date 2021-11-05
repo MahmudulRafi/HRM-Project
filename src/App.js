@@ -1,18 +1,35 @@
 import "./App.css";
-import { ToastContainer } from "react-toastify";
 import ProtectedRoute from "./common/Protected.route";
 import { Redirect, Route, Switch } from "react-router";
-import UserDashboard from "./UserDashboard";
-import Login from "./components/auth/Login.component";
-import Logout from "./components/auth/Logout.component";
+import Login from "./components/authentication/Login.component";
+import Logout from "./components/authentication/Logout.component";
+import Home from "./Home";
+import { useEffect, useState } from "react";
 
 function App() {
+    // const [isAuthenticated, setAuthenticated] = useState(false);
+
+    // useEffect(() => {
+    //     if (localStorage.getItem("accessToken")) {
+    //         setAuthenticated(true);
+    //     } else {
+    //         setAuthenticated(false);
+    //     }
+    // }, []);
+
     return (
         <div>
             <Switch>
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />
-                <ProtectedRoute path="/" component={UserDashboard} />
+                {/* <Route exact path="/">
+                    {isAuthenticated ? (
+                        <Redirect path="/" />
+                    ) : (
+                        <Login setAuthenticated={setAuthenticated} />
+                    )}
+                </Route> */}
+                <ProtectedRoute path="/" component={Home} />
             </Switch>
         </div>
     );
